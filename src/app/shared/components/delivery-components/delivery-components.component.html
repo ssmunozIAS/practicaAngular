@@ -1,0 +1,7 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit">
+    <label for ="nombre">Nombre:</label>
+    <input type="text" formControlName="nombre">
+    <div *ngif="formulario.get('nombre').invalid && (formulario.get('nombre').dirty || formulario.get('nombre').touched)">
+        <div *ngif="formulario.get('nombre').errors.required">El nombre es obligatorio</div>
+    </div>
+</form>
